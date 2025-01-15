@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            width: 100%;
+            padding: 50px;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+        }
+
+        *,
+        *>* {
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        form {
+            border: 1px solid black;
+            width: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .body {
+            width: 100%;
+            height: fit-content;
+            padding: 20px;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            border: 1px solid black;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        input {
+            border: 1px solid black;
+        }
+
+        .flex_row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="body">
+        <h1>NOTES</h1>
+        <ul>
+            <li>aaaaaa</li>
+            <li>bbbbbbbbb</li>
+            <li>cccccccc</li>
+            <li>ddddddddddd</li>
+            <li>eeeeeeeeeeeeee</li>
+        </ul>
+        <div class="flex_row"><input type='text' id="inp" value="" /> <input type="submit" onclick="save()"
+                value="Save">
+        </div>
+    </div>
+    <script>
+
+        function save(e) {
+            e && e.preventDefault()
+            list = document.getElementsByTagName('ul')[0]
+            newElement = document.createElement('li')
+            let inputContent = document.getElementsByTagName('input')[0]
+            console.log(inputContent.value)
+            let inpttxc = inputContent.textContent
+            console.log('object', inpttxc)
+            newElement.textContent = inputContent.value
+            list.appendChild(newElement)
+            inputContent.value = ''
+        }
+
+
+    </script>
+</body>
+
+</html>
